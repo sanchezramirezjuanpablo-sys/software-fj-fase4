@@ -1,0 +1,95 @@
+2026-11-09 12:48:08 | INFO     | software_fj.sistema    | === Sistema Software FJ iniciado ===
+2026-11-09 12:48:08 | INFO     | software_fj.cliente    | Cliente creado: Laura Gómez (CLI-0001)
+2026-11-09 12:48:08 | INFO     | software_fj.sistema    | Op 01 'Registrar cliente válido: Laura Gómez' completada
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 01 finalizada (exitosas=1, fallidas=0)
+2026-11-09 12:48:08 | INFO     | software_fj.cliente    | Cliente creado: Carlos Pérez (CLI-0002)
+2026-11-09 12:48:08 | INFO     | software_fj.sistema    | Op 02 'Registrar cliente válido: Carlos Pérez' completada
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 02 finalizada (exitosas=2, fallidas=0)
+2026-11-09 12:48:08 | ERROR    | software_fj.sistema    | Op 03 'Registrar cliente con correo inválido (error esperado)' falló: [SFJ-200] No se pudo registrar el cliente | causa: DatoInvalidoError: [SFJ-100] Dato inválido en 'correo' ('ana.ruiz-arroba-correo'): no tiene un formato de correo válido
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 03 finalizada (exitosas=2, fallidas=1)
+2026-11-09 12:48:08 | ERROR    | software_fj.sistema    | Op 04 'Registrar cliente sin documento (error esperado)' falló: [SFJ-200] No se pudo registrar el cliente | causa: ParametroFaltanteError: [SFJ-101] Falta el parámetro obligatorio 'documento' en Cliente
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 04 finalizada (exitosas=2, fallidas=2)
+2026-11-09 12:48:08 | ERROR    | software_fj.sistema    | Op 05 'Registrar cliente con documento repetido (error esperado)' falló: [SFJ-200] Ya existe un cliente con el documento terminado en 5678
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 05 finalizada (exitosas=2, fallidas=3)
+2026-11-09 12:48:08 | INFO     | software_fj.servicios  | Servicio creado: Sala de Juntas Norte (SRV-0001)
+2026-11-09 12:48:08 | INFO     | software_fj.sistema    | Op 06 'Crear servicio: Sala de juntas (capacidad 10)' completada
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 06 finalizada (exitosas=3, fallidas=3)
+2026-11-09 12:48:08 | INFO     | software_fj.servicios  | Servicio creado: Proyectores Epson (SRV-0002)
+2026-11-09 12:48:08 | INFO     | software_fj.sistema    | Op 07 'Crear servicio: alquiler de 3 proyectores' completada
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 07 finalizada (exitosas=4, fallidas=3)
+2026-11-09 12:48:08 | INFO     | software_fj.servicios  | Servicio creado: Auditoría de Ciberseguridad (SRV-0003)
+2026-11-09 12:48:08 | INFO     | software_fj.sistema    | Op 08 'Crear servicio: asesoría experta en ciberseguridad' completada
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 08 finalizada (exitosas=5, fallidas=3)
+2026-11-09 12:48:08 | ERROR    | software_fj.sistema    | Op 09 'Crear servicio con tarifa negativa (error esperado)' falló: [SFJ-300] La tarifa debe ser mayor que cero (se recibió -5000.0)
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 09 finalizada (exitosas=5, fallidas=4)
+2026-11-09 12:48:08 | ERROR    | software_fj.sistema    | Op 10 'Crear servicio de un tipo que no existe (error esperado)' falló: [SFJ-300] El tipo de servicio 'catering' no existe. Opciones: sala, equipo, asesoria | causa: KeyError: 'catering'
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 10 finalizada (exitosas=5, fallidas=5)
+2026-11-09 12:48:08 | INFO     | software_fj.reserva    | Reserva RES-0001 creada: Laura Gómez -> Sala de Juntas Norte (3.0 hora)
+2026-11-09 12:48:08 | INFO     | software_fj.sistema    | Op 11 'Reserva válida: Laura, sala 3 horas para 8 personas' completada
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 11 finalizada (exitosas=6, fallidas=5)
+2026-11-09 12:48:08 | INFO     | software_fj.reserva    | Reserva RES-0001 CONFIRMADA
+2026-11-09 12:48:08 | INFO     | software_fj.reserva    | Reserva RES-0001 PROCESADA por $ 278.460
+2026-11-09 12:48:08 | DEBUG    | software_fj.reserva    | Intento de procesar RES-0001 terminó en estado PROCESADA
+2026-11-09 12:48:08 | INFO     | software_fj.sistema    | Op 12 'Confirmar y procesar la reserva de Laura (IVA + 10 % dto.)' completada
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 12 finalizada (exitosas=7, fallidas=5)
+2026-11-09 12:48:08 | ERROR    | software_fj.sistema    | Op 13 'Reserva con duración escrita en letras (error esperado)' falló: [SFJ-400] La duración 'tres' no es un número | causa: ValueError: could not convert string to float: 'tres'
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 13 finalizada (exitosas=7, fallidas=6)
+2026-11-09 12:48:08 | ERROR    | software_fj.sistema    | Op 14 'Reserva de sala para 40 personas (error esperado: no caben)' falló: [SFJ-400] Los datos de la reserva no sirven para Sala de Juntas Norte | causa: DatoInvalidoError: [SFJ-100] Dato inválido en 'personas' (40): la sala 'Sala de Juntas Norte' admite máximo 10
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 14 finalizada (exitosas=7, fallidas=7)
+2026-11-09 12:48:08 | ERROR    | software_fj.sistema    | Op 15 'Reserva de un cliente que no existe (error esperado)' falló: [SFJ-200] No hay ningún cliente registrado con el documento 99999999
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 15 finalizada (exitosas=7, fallidas=8)
+2026-11-09 12:48:08 | INFO     | software_fj.reserva    | Reserva RES-0002 creada: Carlos Pérez -> Proyectores Epson (5.0 día)
+2026-11-09 12:48:08 | INFO     | software_fj.servicios  | SRV-0002: se apartaron 2 unidades, quedan 1
+2026-11-09 12:48:08 | INFO     | software_fj.reserva    | Reserva RES-0002 CONFIRMADA
+2026-11-09 12:48:08 | INFO     | software_fj.sistema    | Op 16 'Reserva válida: Carlos, 2 proyectores por 5 días (confirmada)' completada
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 16 finalizada (exitosas=8, fallidas=8)
+2026-11-09 12:48:08 | INFO     | software_fj.reserva    | Reserva RES-0003 creada: Laura Gómez -> Proyectores Epson (1.0 día)
+2026-11-09 12:48:08 | ERROR    | software_fj.reserva    | Reserva RES-0003 no se pudo confirmar: servicio no disponible
+2026-11-09 12:48:08 | INFO     | software_fj.reserva    | Reserva RES-0003 CANCELADA (rechazada: servicio no disponible)
+2026-11-09 12:48:08 | DEBUG    | software_fj.reserva    | Intento de cancelación de RES-0003: PENDIENTE -> CANCELADA
+2026-11-09 12:48:08 | ERROR    | software_fj.sistema    | Op 17 'Reserva de 2 proyectores cuando solo queda 1 (error esperado)' falló: [SFJ-301] El servicio 'Proyectores Epson (pidió 2, quedan 1)' no está disponible en este momento
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 17 finalizada (exitosas=8, fallidas=9)
+2026-11-09 12:48:08 | ERROR    | software_fj.reserva    | Cálculo inconsistente al procesar RES-0002
+2026-11-09 12:48:08 | DEBUG    | software_fj.reserva    | Intento de procesar RES-0002 terminó en estado CONFIRMADA
+2026-11-09 12:48:08 | ERROR    | software_fj.sistema    | Op 18 'Procesar con impuesto 'diecinueve' (error esperado: cálculo inconsistente)' falló: [SFJ-500] No se pudo calcular el costo con impuesto='diecinueve' y descuento=None | causa: TypeError: '<=' not supported between instances of 'int' and 'str'
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 18 finalizada (exitosas=8, fallidas=10)
+2026-11-09 12:48:08 | INFO     | software_fj.reserva    | Reserva RES-0002 PROCESADA por $ 562.275
+2026-11-09 12:48:08 | DEBUG    | software_fj.reserva    | Intento de procesar RES-0002 terminó en estado PROCESADA
+2026-11-09 12:48:08 | INFO     | software_fj.sistema    | Op 19 'Procesar de nuevo la reserva de Carlos con el IVA correcto' completada
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 19 finalizada (exitosas=9, fallidas=10)
+2026-11-09 12:48:08 | INFO     | software_fj.reserva    | Reserva RES-0004 creada: Laura Gómez -> Auditoría de Ciberseguridad (4.0 hora)
+2026-11-09 12:48:08 | INFO     | software_fj.reserva    | Reserva RES-0004 CONFIRMADA
+2026-11-09 12:48:08 | INFO     | software_fj.reserva    | Reserva RES-0004 CANCELADA (el cliente reprogramó)
+2026-11-09 12:48:08 | DEBUG    | software_fj.reserva    | Intento de cancelación de RES-0004: CONFIRMADA -> CANCELADA
+2026-11-09 12:48:08 | INFO     | software_fj.sistema    | Op 20 'Reserva de asesoría (4 h), confirmarla y cancelarla' completada
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 20 finalizada (exitosas=10, fallidas=10)
+2026-11-09 12:48:08 | ERROR    | software_fj.sistema    | Op 21 'Procesar una reserva cancelada (error esperado: operación no permitida)' falló: [SFJ-401] No se puede 'procesar' una reserva en estado CANCELADA
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 21 finalizada (exitosas=10, fallidas=11)
+2026-11-09 12:48:08 | WARNING  | software_fj.servicios  | Servicio SRV-0003 marcado como NO DISPONIBLE
+2026-11-09 12:48:08 | INFO     | software_fj.reserva    | Reserva RES-0005 creada: Carlos Pérez -> Auditoría de Ciberseguridad (2.0 hora)
+2026-11-09 12:48:08 | ERROR    | software_fj.reserva    | Reserva RES-0005 no se pudo confirmar: servicio no disponible
+2026-11-09 12:48:08 | INFO     | software_fj.reserva    | Reserva RES-0005 CANCELADA (rechazada: servicio no disponible)
+2026-11-09 12:48:08 | DEBUG    | software_fj.reserva    | Intento de cancelación de RES-0005: PENDIENTE -> CANCELADA
+2026-11-09 12:48:08 | ERROR    | software_fj.sistema    | Op 22 'Reservar la asesoría mientras está en mantenimiento (error esperado)' falló: [SFJ-301] El servicio 'Auditoría de Ciberseguridad' no está disponible en este momento
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 22 finalizada (exitosas=10, fallidas=12)
+2026-11-09 12:48:08 | WARNING  | software_fj.servicios  | Servicio SRV-0003 marcado como DISPONIBLE
+2026-11-09 12:48:08 | INFO     | software_fj.sistema    | Op 23 'Cotizar sala: calcular_costo(2) sin impuesto ni descuento' completada
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 23 finalizada (exitosas=11, fallidas=12)
+2026-11-09 12:48:08 | INFO     | software_fj.sistema    | Op 24 'Cotizar sala: calcular_costo(2, impuesto=0.19, descuento=0.05)' completada
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 24 finalizada (exitosas=12, fallidas=12)
+2026-11-09 12:48:08 | INFO     | software_fj.sistema    | Op 25 'Cotizar sala: cotizar(4) -> número (IVA incluido)' completada
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 25 finalizada (exitosas=13, fallidas=12)
+2026-11-09 12:48:08 | INFO     | software_fj.sistema    | Op 26 'Cotizar sala: cotizar((4, 0.15)) -> tupla (duración, descuento)' completada
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 26 finalizada (exitosas=14, fallidas=12)
+2026-11-09 12:48:08 | INFO     | software_fj.sistema    | Op 27 'Cotizar sala: cotizar({'duracion': 4, 'personas': 10}) -> diccionario' completada
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 27 finalizada (exitosas=15, fallidas=12)
+2026-11-09 12:48:08 | ERROR    | software_fj.sistema    | Op 28 'Cotizar con un tipo no soportado: cotizar('cuatro') (error esperado)' falló: [SFJ-100] Dato inválido en 'consulta' ('cuatro'): use un número, una tupla (duración, descuento) o un diccionario
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 28 finalizada (exitosas=15, fallidas=13)
+2026-11-09 12:48:08 | CRITICAL | software_fj.sistema    | Op 29 'Llamar una operación con argumentos equivocados (error inesperado)': error inesperado
+Traceback (most recent call last):
+  File "C:\Users\sanch\Downloads\software_fj\software_fj\software_fj\sistema.py", line 56, in ejecutar
+    resultado = operacion(*args, **kwargs)  # Intentamos la operación
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: SistemaGestion.crear_reserva() missing 2 required positional arguments: 'servicio_id' and 'duracion'
+2026-11-09 12:48:08 | DEBUG    | software_fj.sistema    | Op 29 finalizada (exitosas=15, fallidas=14)
+2026-11-09 12:48:08 | INFO     | software_fj.sistema    | Reporte: 2 clientes, 3 servicios, 5 reservas, ingresos $ 840.735
